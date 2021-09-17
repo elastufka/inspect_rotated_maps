@@ -1,11 +1,19 @@
+sunpy==3.0.1
+dash==1.16.3
+pandas==1.2.4
+numpy==1.19.2
+matplotlib==3.3.2
+plotly==5.2.1
+scikit_image==0.18.1
+astropy==4.2.1
+dash_html_components==1.1.1
+dash_core_components==1.12.1
+dash_bootstrap_components==0.13.0
+skimage==0.0
+ 28 lines (28 sloc) 474 Bytes
 certifi==2019.6.16
 chardet==3.0.4
 Click==7.0
-dash==1.1.1
-dash-core-components==1.1.1
-dash-html-components==1.0.0
-dash-renderer==1.0.0
-dash-table==4.1.0
 dask==2.1.0
 decorator==4.4.0
 Flask==1.1.1
@@ -19,9 +27,6 @@ Jinja2==2.10.1
 jupyter-core==4.5.0
 MarkupSafe==1.1.1
 nbformat==4.4.0
-numpy==1.16.4
-pandas==0.24.2
-plotly==4.1.0
 pytz==2019.1
 six==1.12.0
 traitlets==4.3.2
