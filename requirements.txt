@@ -9,7 +9,6 @@ astropy==4.2.1
 dash_html_components==1.1.1
 dash_core_components==1.12.1
 dash_bootstrap_components==0.13.0
-scikit-image==0.12.3
 certifi==2019.6.16
 chardet==3.0.4
 Click==7.0
