@@ -10,7 +10,6 @@ dash_html_components==1.1.1
 dash_core_components==1.12.1
 dash_bootstrap_components==0.13.0
 skimage==0.0
- 28 lines (28 sloc) 474 Bytes
 certifi==2019.6.16
 chardet==3.0.4
 Click==7.0
