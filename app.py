@@ -170,7 +170,7 @@ def update_image_fig(target,scale,vmin,vmax,cscale,relayoutData,fig): #hopefully
         kk=list(relayoutData.keys())
         if 'autosize' not in kk and 'xaxis.showspikes' not in kk: #it's been zoomed
             #which plot is zoomed? axis vs axis2
-            to_zoom,new_layout=transform_zoom(relayoutData,image_df.wcs_original[target[0]],image_df.wcs_rotated[target[0]],image_df.observer_original[target[0]],image_df.observer_rotated[target[0]])
+            to_zoom,new_layout=transform_zoom(relayoutData,image_df.wcs_original[target[0]],image_df.wcs_rotated[target[0]],image_df.observer_original[target[0]],image_df.observer_rotated[target[0]],binning=image_df.binning_original[target[0]])
             #print(new_layout)
             for ax in to_zoom:
                 fig['layout'][ax]['range']=new_layout[ax]['range']
