@@ -25,7 +25,7 @@ from rotate_maps_utils import *
 #import base64
 
 external_stylesheets = [dbc.themes.SOLAR] #lol
-app = dash.Dash(external_stylesheets=external_stylesheets) #__name__,
+app = dash.Dash(__name__,external_stylesheets=external_stylesheets) #__name__,
 server = app.server #for Heroku
 colorscales = px.colors.named_colorscales()
 
