@@ -26,7 +26,7 @@ from rotate_maps_utils import *
 
 external_stylesheets = [dbc.themes.SOLAR] #lol
 app = dash.Dash(external_stylesheets=external_stylesheets) #__name__,
-
+server = app.server #for Heroku
 colorscales = px.colors.named_colorscales()
 
 #image_filename = '/Users/wheatley/Documents/Solar/DEM/banner.png' # replace with your own image
