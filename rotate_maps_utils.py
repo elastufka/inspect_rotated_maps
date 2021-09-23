@@ -211,6 +211,6 @@ def transform_zoom(relayoutData,wcs_original,wcs_rotated,observer_original,obser
     new_layout[outkeys[0]]['range']=[bottom_left_pix[0]//binning,top_right_pix[0]//binning]
     new_layout[outkeys[1]]['range']=[bottom_left_pix[1]//binning,top_right_pix[1]//binning]
     #what to do if it's out of the axis range? or if transformation gives NaN in skycoords? use height/width of rectangle instead
-    #print(new_layout)
+
     
     return zaxes, new_layout
