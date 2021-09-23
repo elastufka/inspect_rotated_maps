@@ -26,7 +26,7 @@ from rotate_maps_utils import *
 
 external_stylesheets = [dbc.themes.SOLAR] #lol
 app = dash.Dash(__name__,external_stylesheets=external_stylesheets) #__name__,
-server = app.server #for Heroku
+#server = app.server #for Heroku
 colorscales = px.colors.named_colorscales()
 
 #image_filename = '/Users/wheatley/Documents/Solar/DEM/banner.png' # replace with your own image
@@ -37,9 +37,9 @@ colorscales = px.colors.named_colorscales()
 
 imstyle={'height':500} #starting height of image element
 
-image_df=load_example_data()
+image_df,hdf=load_data()#load_example_data()
 #initial images
-rows,fig=image_grid(image_df,'2021-05-07T00:37:02','linear',0,500)
+rows,fig=image_grid(image_df,hdf,'2021-05-07T00:37:02','linear',0,500)
 style0={'height':rows*300,'min-height':'550px'}
 
 ########### layout
@@ -119,7 +119,7 @@ def update_image_fig(target,scale,vmin,vmax,cscale,relayoutData,fig): #hopefully
     #print(tnames,target)
     if target != tnames: #current name of data ... need to update the whole figure
         print("generating new figure",tnames,target)
-        rows,fig=image_grid(image_df,target,scale,vmin,vmax)
+        rows,fig=image_grid(image_df,hdf,target,scale,vmin,vmax)
         return fig
         
     if cscale !=fig['data'][0]['current_colorscale']:
