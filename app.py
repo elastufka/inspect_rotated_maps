@@ -27,7 +27,7 @@ from rotate_maps_utils import *
 external_stylesheets = [dbc.themes.SOLAR] #lol
 app = dash.Dash(__name__,external_stylesheets=external_stylesheets) #__name__,
 server = app.server #for Heroku
-colorscales = px.colors.named_colorscales()
+colorscales = ['blackbody','blues','reds','jet','reds_r']
 
 #image_filename = '/Users/wheatley/Documents/Solar/DEM/banner.png' # replace with your own image
 #encoded_image = base64.b64encode(open(image_filename, 'rb').read())
@@ -45,10 +45,10 @@ style0={'height':rows*300,'min-height':'550px'}
 ########### layout
 
 app.layout = html.Div([html.Div(children=dbc.Jumbotron([html.H1("Rotated AIA maps", className="display-3"),
-#   html.P(
-#       "Choose your poison ",
-#       className="lead",
-#   ),
+   html.P(
+       "A prototype in Dash",
+       className="lead",
+   ),
    #html.Hr(className="my-2"),
 #   html.Div([
 #        html.Div(html.P(children=[
@@ -74,7 +74,9 @@ app.layout = html.Div([html.Div(children=dbc.Jumbotron([html.H1("Rotated AIA map
                   dcc.Input(id='vmax',type='text',value="500",debounce=True,style={'width': 50})],
                               style={'width': '10%', 'display': 'inline-block','verticalAlign':'top'}),
  html.Div(dcc.Graph(id='display-images',figure=fig,style=style0)),
-    html.Div(children=["Copyright 2021 ",html.A("Erica Lastufka",href="https://github.com/elastufka/")]),]),
+    html.Div(children=["Copyright 2021 ",html.A("Erica Lastufka",href="https://github.com/elastufka/")]),
+    html.Div(children=[html.P("This prototype was developed in Dash and launched to Heroku, so even though the image data has been heavily binned from its native 4K resolution, callbacks execute very slowly! It is now being developed in Flask for the "), html.A("STIX Data Center.",href="https://pub023.cs.technik.fhnw.ch/")])
+    ]),
     dcc.Tab(label='Download and Rotate',children=[
         html.Div("Nothing here yet!",style={'padding': '1em'})])
     ]),
